@@ -21,7 +21,8 @@ fun main() {
     }
 
     fun calcWin(board: List<List<String>>, nums: List<String>): Int {
-        return board.flatten().subtract(nums.toSet()).sumOf { it.toInt() } * nums.last().toInt()
+        val uncheckedBoardSum = (board.flatten() - nums.toSet()).sumOf { it.toInt() }
+        return uncheckedBoardSum * nums.last().toInt()
     }
 
     fun isBoardWin(bingoNums: List<String>, board: List<List<String>>): Boolean {
